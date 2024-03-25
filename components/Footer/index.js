@@ -1,14 +1,20 @@
+/*
+ * @LastEditors: Necfol
+ * @Date: 2024-03-25 16:38:23
+ * @LastEditTime: 2024-03-26 00:13:53
+ * @FilePath: /grammer-examiner/components/Footer/index.js
+ */
 import styles from './Footer.module.css';
 
 export default function Footer() {
   return (
     <footer className={styles.footer}>
       <a
-        href="https://github.com/ibnzUK/next-chrome-starter"
+        href="https://terpampas.com/"
         target="_blank"
         rel="noopener noreferrer"
       >
-        Footer V.0.0.1
+        Grammer Examiner V.0.0.1
         <span className={styles.logo}>
           <img
             src="icons/icon16.png"
