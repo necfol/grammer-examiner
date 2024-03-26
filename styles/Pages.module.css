@@ -238,3 +238,18 @@
     blinkCursor 0.5s step-end infinite alternate;
   margin-top: 1.5em;
 }
+
+.configButton {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  position: relative;
+  top: 100px;
+  cursor: pointer;
+}
+
+.configTips {
+  font-weight: 600;
+  color: #ef7356;
+  margin-top: 4px;
+}
