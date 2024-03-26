@@ -29,6 +29,11 @@
       ]
     }
   ],
+  "externally_connectable": {
+    "matches": [
+      "<all_urls>"
+    ]
+  },
   "content_scripts": [
     {
       "matches": [

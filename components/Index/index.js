@@ -31,14 +31,18 @@ export default function Index({ navigateToPage }) {
     }
   }
 
-  const updatePopup = () => {
+  const updatePopup = async () => {
     if (chrome && chrome.storage && chrome.storage.sync) {
-      chrome.storage.sync.get([`${CONTEXT_MENU_ID}-selected`], function (data) {
-        const text = data[`${CONTEXT_MENU_ID}-selected`]
-        setSelectedData(text)
-        if (text)
-          getData(selectedData)
-      });
+      const data = await chrome.storage.sync.get([`${CONTEXT_MENU_ID}-selected`, `${CONTEXT_MENU_ID}-tab`])
+      const text = data[`${CONTEXT_MENU_ID}-selected`]
+      const tabId = data[`${CONTEXT_MENU_ID}-tab`]
+      const [tab] = await chrome.tabs.query({ active: true, currentWindow: true })
+      if (tabId === tab.id) {
+        if (text) {
+          setSelectedData(text)
+          getData(text)
+        }
+      }
     }
   }
   const reGenerate = () => {
@@ -49,6 +53,7 @@ export default function Index({ navigateToPage }) {
   useEffect(() => {
     updatePopup();
   }, []);
+
   return (
     <div className={styles.container}>
 
