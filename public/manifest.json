@@ -3,7 +3,7 @@
   "name": "Grammer-examiner",
   "short_name": "G-E",
   "version": "0.0.1",
-  "description": "Grammer-examiner powered by ChatGPT and Next.js",
+  "description": "Grammer-examiner - Grammar correction through AI for efficient English learning anytime, anywhere!",
   "icons": {
     "16": "/icons/ge.png",
     "32": "/icons/ge.png",
